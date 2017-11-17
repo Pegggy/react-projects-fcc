@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import './app.css'
 let marked = require('marked')
 
 class Input extends Component{
@@ -18,12 +19,14 @@ class Input extends Component{
   }
   render(){
     return(
-      <div>
+      <div className="MarkdownPreviewer">
         <div className="left">
+          <h1> Input </h1>
           <textarea value={this.state.value} onChange={this.handleChange.bind(this)}/>
         </div>
-        <div className="right" dangerouslySetInnerHTML={this.getMarked(this.state.value)}>
-          
+        <div className="right" >
+          <h1> Output </h1>
+          <div className="content" dangerouslySetInnerHTML={this.getMarked(this.state.value)}></div>
         </div>
       </div>
     )
