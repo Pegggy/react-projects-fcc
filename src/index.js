@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Input from './leaderboard/app';
+import Leaderboard from './leaderboard/app';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Input />, document.getElementById('root'));
+ReactDOM.render(<Leaderboard />, document.getElementById('root'));
 registerServiceWorker();
