@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-
+import './app.css'
 const RECENTURL = 'http://fcctop100.herokuapp.com/api/fccusers/top/recent'
 const ALLTIMEURL = 'http://fcctop100.herokuapp.com/api/fccusers/top/alltime'
 
@@ -19,14 +19,14 @@ class Leaderboard extends Component{
     let users = this.state.users.map((user,index) =>
       <Item {...user} id={index+1}/>)
     return(
-      <div>
-        <table>
+      <div className="table-wrap">
+        <table className="table">
           <caption>Leaderboard</caption>
           <tr>
-            <th> Number </th>
+            <th className="number"> # </th>
             <th> Camper Name </th>
-            <th> Points in past 30 days </th>
-            <th> All time points </th>
+            <th className="points"> Points in past 30 days </th>
+            <th className="points"> All time points </th>
           </tr>
           <tbody>
              {users} 
@@ -40,10 +40,15 @@ class Item extends Component{
   render(){
     return(
       <tr>
-        <td>{this.props.id}</td>
-        <td>{this.props.username}</td>
-        <td>{this.props.recent}</td>
-        <td>{this.props.alltime}</td>
+        <td className="number">{this.props.id}</td>
+        <td className="user">
+          <a href={`https://www.freecodecamp.com/${this.props.username}`} target="_blank">
+            <img src={`${this.props.img}`} className="avator"/>
+            {this.props.username}
+          </a>
+        </td>
+        <td className="points">{this.props.recent}</td>
+        <td className="points">{this.props.alltime}</td>
       </tr>
     )
   }

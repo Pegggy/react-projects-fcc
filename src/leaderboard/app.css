@@ -1,0 +1,51 @@
+body{
+  background: #c4d8e2;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.table-wrap{
+  width: 800px;
+  margin: 0 auto;
+}
+.table{
+  border-spacing: 0;
+  background: #f0f0f0;
+  color:#333;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #14213d;
+}
+.table caption{
+  background: #003f77;
+  color: #c4c6ce;
+  padding: 10px;
+  font-size: 20px;
+}
+.table tr th{
+  /* padding: 10px 20px; */
+}
+.table tr td{
+    border: 1px solid #ddd;
+}
+.number{
+  width: 50px;
+  text-align: center;
+}
+.avator{
+  width: 40px;
+  border: 2px solid #381F0B;
+  border-radius: 4px;
+  max-height: 40px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.points{
+  padding: 10px 25px;
+  text-align: center;
+}
+.user{
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
