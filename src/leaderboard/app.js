@@ -15,6 +15,11 @@ class Leaderboard extends Component{
       .then(res => res.json())
       .then(users => this.setState({users}))
   }
+  fetchUser(url){
+    fetch(url)
+      .then(res => res.json())
+      .then(users => this.setState({users}))
+  }
   render(){
     let users = this.state.users.map((user,index) =>
       <Item {...user} id={index+1}/>)
@@ -25,8 +30,8 @@ class Leaderboard extends Component{
           <tr>
             <th className="number"> # </th>
             <th> Camper Name </th>
-            <th className="points"> Points in past 30 days </th>
-            <th className="points"> All time points </th>
+            <th className="points" onClick={this.fetchUser.bind(this,RECENTURL)}> Points in past 30 days </th>
+            <th className="points" onClick={this.fetchUser.bind(this,ALLTIMEURL)}> All time points </th>
           </tr>
           <tbody>
              {users} 
